@@ -4,11 +4,11 @@ from twilio.rest import Client
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
 
-STOCKKEY = "H3X0E1G19I5W9CQE"
-NEWSKEY = "f71062e78b5f49de83ef0366c4939b70"
+STOCKKEY = "YOUR_STOCK_KEY"
+NEWSKEY = "YOUR_NEWS_KEY"
 
-ACCOUNTSID = "ACa366a929ed835149e4b47ac9e9b02355"
-AUTHTOKEN = "00eb6250fcd69815a658d289c56c3d1a"
+ACCOUNTSID = "YOUR_ACCOUNT_ID"
+AUTHTOKEN = "YOUR_AUTHORISATION_TOKEN"
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
@@ -70,20 +70,10 @@ client = Client(ACCOUNTSID, AUTHTOKEN)
 for article in formattedArticles:
     message = client.messages.create(
         body=article,
-        from_= "+19855318277",
-        to="+41787706672"
+        from_= "+YOUR_TWILIO_NUMBER",
+        to="+YOUR_PHONE_NUMBER"
     )
 
 
 
-#Optional TODO: Format the message like this: 
-"""
-TSLA: 🔺2%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-or
-"TSLA: 🔻5%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-"""
 
